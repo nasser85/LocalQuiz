@@ -1,0 +1,427 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: antiquewhite;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2em;
+  color: black;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.app-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 97%;
+  float: left;
+  margin-left: 1.38889%;
+  margin-top: 1rem;
+}
+@media (min-width: 40em) {
+  .app-btn {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+    margin-top: 1rem;
+  }
+}
+.app-btn-text {
+  font-size: 1.2rem;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*
+*
+*  Generic Card styling
+*
+*
+*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    -webkit-transition: 0.3s;
+    -mos-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.card-image {
+    border-radius: 5px 5px 0 0;
+}
+
+.card-container {
+    padding: 4px;
+}
+
+
+/*
+*
+*  Generic Grid styling
+*
+*/
+
+.sm-1, .lg-1, .sm-2, .lg-2, .sm-3, .lg-3, .sm-4, .lg-4, .sm-5, .lg-5, .sm-6, .lg-6, .sm-7, .lg-7, .sm-8, .lg-8, .sm-9, .lg-9, .sm-10, .lg-10, .sm-11, .lg-11, .sm-12, .lg-12,  {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
+@media (min-width: 40em) {
+  .sm-1 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-1 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+
+@media (min-width: 40em) {
+  .sm-2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-3 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-3 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-4 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-4 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-5 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-5 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-6 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-6 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-7 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-7 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-8 {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-8 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-9 {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-9 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-10 {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-10 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-11 {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 91.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-11 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 91.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 40em) {
+  .sm-12 {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+@media (min-width: 60em) {
+  .lg-12 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-1 {
+    padding-left: 12.5%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-2 {
+    padding-left: 20.83333%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-3 {
+    padding-left: 29.16667%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-4 {
+    padding-left: 37.5%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-5 {
+    padding-left: 45.83333%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-6 {
+    padding-left: 54.16667%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-7 {
+    padding-left: 62.5%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-8 {
+    padding-left: 70.83333%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-9 {
+    padding-left: 79.16667%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-10 {
+    padding-left: 87.5%;
+  }
+}
+
+@media (min-width: 40em) {
+  .push-11 {
+    padding-left: 95.83333%;
+  }
+}
