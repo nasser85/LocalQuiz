@@ -64,7 +64,9 @@ export default class Database {
     }
   }
   static fetchQuizById(id) {
-    return this.decodeData(window.localStorage.quizzes)[id];
+    return this.decodeData(window.localStorage.quizzes).filter(function(el) {
+        return el.id === id;
+    })[0];
   }
   static encodeData(obj) {
     return window.btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
