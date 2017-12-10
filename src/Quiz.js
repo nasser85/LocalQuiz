@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Database from './Database';
 import Item from './Item';
 import './App.css';
@@ -106,13 +105,15 @@ export default class Quiz extends Component {
                 answers: question.answerChoices,
                 correctAnswer: question.correctAnswer
             });
-        }, 1500);
+        }, 1200);
     }
     render() {
         return (
+            <div className="question-gutter">
             <div className="question-wrapper start card sm-12 no-gutter">
                 <Question>{this.state.questionText}</Question>
                 <Answers onChange={this.answerQuestion} answers={this.state.answers}>{this.state.answers}</Answers>
+            </div>
             </div>
         )
 

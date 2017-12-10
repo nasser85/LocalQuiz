@@ -7,16 +7,20 @@
     background-color: antiquewhite;
     padding: 1rem .5rem 1rem .5rem;
 }
+.question-gutter {
+    padding: .5rem;
+}
 .question-wrapper {
     padding-bottom: 20px;
     margin-top: 15px;
     opacity: 1;
-    display: block;
+    width: 100%;
     -webkit-transition: margin-left 1s ease;
     transition: margin-left 1s ease;
 }
 .question-wrapper.start {
     margin-left: -150%;
+
 }
 .question-wrapper.leave {
     -webkit-transition: opacity 1s ease;
