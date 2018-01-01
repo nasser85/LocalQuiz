@@ -15,6 +15,7 @@ class App extends Component {
     this.renderMakeQuiz = this.renderMakeQuiz.bind(this);
     this.takeQuiz = this.takeQuiz.bind(this);
     this.makeQuiz = this.makeQuiz.bind(this);
+    this.goHome = this.goHome.bind(this);
   }
   takeQuiz() {
     this.setState({
@@ -30,23 +31,37 @@ class App extends Component {
       takeQuiz: false
     })
   }
+  goHome() {
+   this.setState({
+      mainMenu: true,
+      makeQuiz: false,
+      takeQuiz: false
+    })
+  }
   renderTakeQuiz() {
     return (
-      <QuizMenu></ QuizMenu>
+      <div>
+        <Header returnHome={this.goHome} sectionTitle={'The light weight quiz maker that stores to your local storage!'} />
+        <QuizMenu />
+      </div>
     )
   }
   renderMakeQuiz() {
     return (
-      <QuizMenu></ QuizMenu>
+      <div>
+        <Header returnHome={this.goHome} sectionTitle={'The light weight quiz maker that stores to your local storage!'} />
+        <QuizMenu />
+      </div>
     )
 
   }
   renderMainMenu() {
     return (
-      <Header sectionTitle={'The light weight quiz maker that stores to your local storage!'}>
+      <div>
+        <Header returnHome={this.goHome} sectionTitle={'The light weight quiz maker that stores to your local storage!'} />
         <div onClick={this.makeQuiz} className="card app-btn"><p className="app-btn-text">Make a Quiz</p></div>
         <div onClick={this.takeQuiz} className="card app-btn"><p className="app-btn-text">Take a Quiz</p></div>
-      </Header>
+      </div>
     );
   }
   render() {

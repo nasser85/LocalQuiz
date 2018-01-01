@@ -49,11 +49,7 @@ export default class QuizMenu extends Component {
             )
     }
     render() {
-        return (
-            <Header sectionTitle={this.state.sectionTitle}>
-                {this.state.quiz ? this.renderQuiz() : this.renderMenu()}
-            </Header>
-        )
+        return this.state.quiz ? this.renderQuiz() : this.renderMenu();
     }
 }
 
