@@ -52,12 +52,26 @@ class Answers extends Component {
 export default class Quiz extends Component {
     constructor(props) {
         super(props);
+        this.state = this.getOrigin();
+        this.justAnswered = false;
+        this.answerQuestion = this.answerQuestion.bind(this);
+        this.enterQuestion = this.enterQuestion.bind(this);
+        this.exitQuestion = this.exitQuestion.bind(this);
+        this.renderStart = this.renderStart.bind(this);
+        this.renderFinish = this.renderFinish.bind(this);
+        this.renderQuiz = this.renderQuiz.bind(this);
+        this.startQuiz = this.startQuiz.bind(this);
+        this.returnToQuizMenu = this.returnToQuizMenu.bind(this);
+        this.reloadQuiz = this.reloadQuiz.bind(this);
+        this.getOrigin = this.getOrigin.bind(this);
+    }
+    getOrigin() {
         Database.init();
         const quiz = Database.fetchQuizById(this.props.id).questions;
         const question = quiz[0].question;
         const answers = quiz[0].answerChoices;
         const correctAnswer = quiz[0].correctAnswer;
-        this.state = {
+        return {
             currentQuestion: 0,
             questionText: question,
             answers: answers,
@@ -66,13 +80,6 @@ export default class Quiz extends Component {
             quiz: quiz,
             quizState: 'start'
         }
-        this.answerQuestion = this.answerQuestion.bind(this);
-        this.enterQuestion = this.enterQuestion.bind(this);
-        this.exitQuestion = this.exitQuestion.bind(this);
-        this.renderStart = this.renderStart.bind(this);
-        this.renderFinish = this.renderFinish.bind(this);
-        this.renderQuiz = this.renderQuiz.bind(this);
-        this.startQuiz = this.startQuiz.bind(this);
     }
     componentWillMount() {
         //setTimeout(this.enterQuestion, 0);
@@ -98,38 +105,47 @@ export default class Quiz extends Component {
         setTimeout(() => {
             el.classList.add('start');
         }, 1000);
-
     }
     answerQuestion(answer) {
-        this.exitQuestion();
-        var numberCorrect = this.state.numberCorrect;
-        var nextQuestion = this.state.currentQuestion + 1;
-        numberCorrect += answer == this.state.correctAnswer ? 1 : 0;
-        console.log('number correct: ', numberCorrect);
-        if (nextQuestion == this.state.quiz.length) {
-            setTimeout(() => {
-                this.setState({
-                    numberCorrect: numberCorrect,
-                    currentQuestion: nextQuestion,
-                    quizState: 'finished'
-                });
-            }, 1200);
-        } else {
-            const question = this.state.quiz[nextQuestion];
-            setTimeout(() => {
-                this.setState({
-                    numberCorrect: numberCorrect,
-                    currentQuestion: nextQuestion,
-                    questionText: question.question,
-                    answers: Utils.randomize(question.answerChoices),
-                    correctAnswer: question.correctAnswer
-                });
-            }, 1200);
+        if (!this.justAnswered) {
+            this.justAnswered = true;
+            this.exitQuestion();
+            var numberCorrect = this.state.numberCorrect;
+            var nextQuestion = this.state.currentQuestion + 1;
+            numberCorrect += answer == this.state.correctAnswer ? 1 : 0;
+            console.log('number correct: ', numberCorrect);
+            if (nextQuestion == this.state.quiz.length) {
+                setTimeout(() => {
+                    this.justAnswered = false;
+                    this.setState({
+                        numberCorrect: numberCorrect,
+                        currentQuestion: nextQuestion,
+                        quizState: 'finished'
+                    });
+                }, 1200);
+            } else {
+                var question = this.state.quiz[nextQuestion];
+                console.log(question);
+                console.log(this.state.quiz[nextQuestion].answerChoices);
+                setTimeout(() => {
+                    this.justAnswered = false;
+                    this.setState({
+                        numberCorrect: numberCorrect,
+                        currentQuestion: nextQuestion,
+                        questionText: question.question,
+                        answers: Utils.randomize(question.answerChoices),
+                        correctAnswer: question.correctAnswer
+                    });
+                }, 1200);
+            }
         }
-
     }
     startQuiz() {
         this.setState({quizState: 'loaded'});
+    }
+    reloadQuiz() {
+        const origin = this.getOrigin();
+        this.setState(origin);
     }
     renderStart() {
         return (
@@ -147,9 +163,13 @@ export default class Quiz extends Component {
             </div>
         )
     }
+    returnToQuizMenu() {
+        this.props.onExit();
+    }
     renderFinish() {
         return (
-            <QuizFinish><p>You have completed the Quiz!</p></QuizFinish>
+            <QuizFinish onRetakeQuiz={this.reloadQuiz}
+                        onReturnToQuizMenu={this.returnToQuizMenu}><p>You have completed the Quiz!</p></QuizFinish>
         )
     }
     render() {

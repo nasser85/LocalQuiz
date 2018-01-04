@@ -21,10 +21,15 @@ export default class QuizMenu extends Component {
         this.renderMenu = this.renderMenu.bind(this);
         this.renderItem = this.renderItem.bind(this);
         this.loadQuiz = this.loadQuiz.bind(this);
+        this.exitQuiz = this.exitQuiz.bind(this);
+    }
+    exitQuiz() {
+        this.setState({quiz: null});
     }
     renderQuiz() {
         return (
-            <Quiz id={this.state.quizId}></Quiz>
+            <Quiz onExit={this.exitQuiz}
+                  id={this.state.quizId}></Quiz>
             )
     }
 
